@@ -1,4 +1,4 @@
-package testProgOne
+package main
 
 import "fmt"
 
