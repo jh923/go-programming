@@ -9,15 +9,16 @@ import "fmt"
 var a string = "global scoped var" //var name type. Type is not needed as the compiler can figure it out. But locks the scope of the variable
 
 func main() {
-	//foo()
+	//intro()
 	//convert()
-	test1()
+	//test1()
+	con()
 }
 
 /**
 foo contains basic info about formatting and data types and printing
 */
-func foo() {
+func intro() {
 	var y = "within the scope of function main" //can be declared outside of function body.
 	x := 10                                     //Can't be outside of a function body
 
@@ -52,6 +53,9 @@ func convert() {
 var x int = 42
 var y string = "James Bond"
 var z bool = true
+/**
+The tests can be found at https://docs.google.com/document/d/1ckYpi6hcRkaBUEk975f54oGsHYHu7GhzOk7-nOrkNxo/edit#
+ */
 func test1()	{
 	fmt.Println("Test 1.1 - 1.3")
 	//x := 42
@@ -83,4 +87,47 @@ func test1()	{
 	fmt.Printf("%T\n", y)
 
 
+}
+
+/*
+defining constants
+Constants have their expected type and value are are immutable
+ */
+func con() {
+	//Different ways of defining values as constants
+	const (
+		jeff= "my name is"
+		notTrue= false
+	)
+
+	const scrub bool = true
+
+	fmt.Printf("%T\t%v\n", jeff, jeff)
+	fmt.Printf("%T\t%v\n", notTrue, notTrue)
+	fmt.Printf("%T\t%v\n", scrub, scrub)
+
+	fmt.Println(jeff)
+	fmt.Println(notTrue)
+	fmt.Println(scrub)
+
+	//iota - used to count up in constants
+	const  (
+		a0 = iota
+		a1
+		a2
+	)
+	fmt.Println(a0, a1, a2)
+
+	//using iota in bit shift to denote memory
+
+	const (
+		_ = iota	// _ discard char
+		kb = 1 << (iota * 10) // 1 shift left 10
+		mb = 1 << (iota * 10) // 1 shift left 20
+		gb = 1 << (iota * 10) // 1 shift left 30
+	)
+	fmt.Println(kb, mb, gb)
+	fmt.Printf("%b\n", kb)
+	fmt.Printf("%b\n", mb)
+	fmt.Printf("%b\n", gb)
 }
