@@ -16,6 +16,10 @@ func main() {
 	xi := []int{1,2,3,4,5,6,7,8,9}
 	sum2 := sum(xi...)
 	fmt.Println(sum2)
+
+	func(x int){
+		fmt.Println("This is an anon function.")
+	}(42)
 }
 
 //This function has a list of parameters and then a return type, similar to Java
