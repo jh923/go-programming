@@ -6,7 +6,6 @@ package main
 **  comment out my local version
 **/
 import (
-	//"ass2/go-randomdata-master"
 	"fmt"
 	"strconv"
 	"github.com/Pallinder/go-randomdata"
