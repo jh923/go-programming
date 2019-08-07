@@ -71,4 +71,58 @@ func test5() {
 		}
 	}
 
+
+	type vehicle struct {
+		doors int
+		colour string
+	}
+
+	type truck struct {
+		vehicle
+		fourWheel bool
+	}
+
+	type sedab struct {
+		vehicle
+		luxury bool
+	}
+
+	car1 := truck{
+		vehicle: vehicle{
+			doors: 2,
+			colour: "blue",
+		},
+		fourWheel: true,
+	}
+
+	car2 := sedab{
+		vehicle : vehicle{
+			doors: 5,
+			colour: "Red",
+		},
+		luxury: true,
+	}
+
+	fmt.Println(car1, car2)
+	fmt.Println(car1.doors, car2.doors)
+
+	fmt.Println()
+
+	per := struct {
+		first string
+		last string
+		age int
+		married bool
+	}{
+		first: "Aivis",
+		last: "Jak",
+		age: 21,
+		married: false,
+	}
+
+	if per.married == true {
+		fmt.Printf("%s %s is married.", per.first, per.last)
+	} else {
+		fmt.Printf("%s %s is not married.", per.first, per.last)
+	}
 }
