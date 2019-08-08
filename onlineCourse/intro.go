@@ -2,7 +2,6 @@
 func contains basic info about formatting and data types and printing
 */
 
-
 package main
 
 import "fmt"

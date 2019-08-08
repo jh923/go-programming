@@ -4,7 +4,7 @@ import "fmt"
 
 type person struct {
 	first string
-	last string
+	last  string
 }
 
 type secretAgent struct {
@@ -13,11 +13,11 @@ type secretAgent struct {
 }
 
 //This function can only be used by secret agents
-func (s secretAgent) speak()	{
+func (s secretAgent) speak() {
 	fmt.Printf("I am agent %s %s.\n", s.first, s.last)
 }
 
-func main()	{
+func main() {
 	sa1 := secretAgent{
 		person: person{
 			"James",

@@ -10,10 +10,9 @@ var x int = 42
 var y string = "James Bond"
 var z bool = true
 
-func main()	{
+func main() {
 	test1()
 }
-
 
 func test1() {
 	fmt.Println("Test 1.1 - 1.3")

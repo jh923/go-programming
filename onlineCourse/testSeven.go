@@ -6,7 +6,7 @@ package main
 
 import "fmt"
 
-func main()	{
+func main() {
 	//test 7.11
 	x := 42
 	fmt.Println(&x)
@@ -14,14 +14,13 @@ func main()	{
 	//test 7.2
 	p1 := t7Person{
 		first: "Jack",
-		last: "Jones",
+		last:  "Jones",
 	}
-	
+
 	fmt.Println(p1)
 	changeMe(&p1)
 	fmt.Println(p1)
 }
-
 
 func changeMe(p *t7Person) {
 	p.first = "Jeff"
@@ -29,6 +28,5 @@ func changeMe(p *t7Person) {
 
 type t7Person struct {
 	first string
-	last string
-
+	last  string
 }

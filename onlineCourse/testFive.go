@@ -6,20 +6,20 @@ package main
 
 import "fmt"
 
-func main()	{
+func main() {
 	test5()
 }
 
 func test5() {
 	type person struct {
-		first string
-		last string
+		first     string
+		last      string
 		favFlavor []string
 	}
 
 	p1 := person{
 		first: "Jeff",
-		last: "Jones",
+		last:  "Jones",
 		favFlavor: []string{
 			"Choc",
 			"Strawberry",
@@ -28,7 +28,7 @@ func test5() {
 
 	p2 := person{
 		first: "Nadir",
-		last: "Farfa",
+		last:  "Farfa",
 		favFlavor: []string{
 			"Mint",
 			"Lemon",
@@ -48,32 +48,31 @@ func test5() {
 
 	//Done using range
 	fmt.Printf("\n%s %s likes the following types of ice creams: ", p1.first, p1.last)
-	for _, v := range p1.favFlavor{
+	for _, v := range p1.favFlavor {
 		fmt.Print(v, " ")
 	}
 
 	fmt.Printf("\n%s %s likes the following types of ice creams: ", p2.first, p2.last)
-	for _, v := range p2.favFlavor{
+	for _, v := range p2.favFlavor {
 		fmt.Print(v, " ")
 	}
 
 	fmt.Println()
 
 	m1 := map[string]person{
-		p1.last : p1,
+		p1.last: p1,
 		p2.last: p2,
 	}
 
 	for k, v := range m1 {
 		fmt.Println("\n", k)
-		for i, v2 := range v.favFlavor  {
+		for i, v2 := range v.favFlavor {
 			fmt.Println(i, v2)
 		}
 	}
 
-
 	type vehicle struct {
-		doors int
+		doors  int
 		colour string
 	}
 
@@ -89,15 +88,15 @@ func test5() {
 
 	car1 := truck{
 		vehicle: vehicle{
-			doors: 2,
+			doors:  2,
 			colour: "blue",
 		},
 		fourWheel: true,
 	}
 
 	car2 := sedab{
-		vehicle : vehicle{
-			doors: 5,
+		vehicle: vehicle{
+			doors:  5,
 			colour: "Red",
 		},
 		luxury: true,
@@ -109,14 +108,14 @@ func test5() {
 	fmt.Println()
 
 	per := struct {
-		first string
-		last string
-		age int
+		first   string
+		last    string
+		age     int
 		married bool
 	}{
-		first: "Aivis",
-		last: "Jak",
-		age: 21,
+		first:   "Aivis",
+		last:    "Jak",
+		age:     21,
 		married: false,
 	}
 

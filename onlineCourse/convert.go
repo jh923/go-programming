@@ -6,10 +6,9 @@ package main
 
 import "fmt"
 
-func main()	{
+func main() {
 	convert()
 }
-
 
 func convert() {
 	type sInt int
