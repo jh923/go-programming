@@ -44,8 +44,8 @@ func main()	{
 	t68v:= t68()
 	fmt.Println(t68v())
 
-	t59xs := []int{2,3,4,5,6,7,8,9,10,11,1,21,1234,23345,32,1}
-	fmt.Println(t59Even(t59Mul, t59xs...))
+	t69xs := []int{2,3,4,5,6,7,8,9,10,11,1,21,1234,23345,32,1}
+	fmt.Println(t69Even(t69Mul, t69xs...))
 }
 
 func test611() int {
@@ -123,7 +123,7 @@ func t68() func()	int	{
 }
 
 
-func t59Mul(is ...int) int {
+func t69Mul(is ...int) int {
 	total := 1
 	for _, v := range is	{
 		total = total * v
@@ -131,7 +131,7 @@ func t59Mul(is ...int) int {
 	return total
 }
 
-func t59Even(f func(is ...int) int, xs ...int)	int {
+func t69Even(f func(is ...int) int, xs ...int)	int {
 	var ys []int
 	for _, v := range xs	{
 		if v%2 == 0 {
