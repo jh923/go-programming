@@ -1,8 +1,8 @@
 package main
 
 import (
-"fmt"
-"sort"
+	"fmt"
+	"sort"
 )
 
 type Person struct {
@@ -13,12 +13,14 @@ type Person struct {
 // We define a new type which impediments the sort interface sao it requires these three functions: Len, Swap and Less
 //This example is for sorting by ages
 type ByAge []Person
+
 func (a ByAge) Len() int           { return len(a) }
 func (a ByAge) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 func (a ByAge) Less(i, j int) bool { return a[i].Age < a[j].Age }
 
 //This is another example of implementing the sort interface, but sorts by name
 type ByFirst []Person
+
 func (f ByFirst) Len() int           { return len(f) }
 func (f ByFirst) Swap(i, j int)      { f[i], f[j] = f[j], f[i] }
 func (f ByFirst) Less(i, j int) bool { return f[i].First < f[j].First }
