@@ -7,13 +7,13 @@ import (
 	"sync/atomic"
 )
 
-func main()	{
+func main() {
 	var counter int64
 	const gs = 100
 	var wg = sync.WaitGroup{}
 	wg.Add(gs)
 
-	for i := 0; i < gs; i++	{
+	for i := 0; i < gs; i++ {
 		go func() {
 			atomic.AddInt64(&counter, 1)
 			runtime.Gosched()
