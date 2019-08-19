@@ -20,7 +20,7 @@ func main()	{
 			fmt.Println("Counter\t", atomic.LoadInt64(&counter))
 			wg.Done()
 		}()
-		fmt.Println("Goroutines:\t", runtime.NumGoroutine())
+
 	}
 	wg.Wait()
 }
