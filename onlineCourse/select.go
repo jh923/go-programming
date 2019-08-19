@@ -30,7 +30,6 @@ func send(even, odd chan<- int, quit chan<- bool) {
 	close(quit)
 }
 
-
 // v, ok idiom used as when channel is closed, we match with the first two cases with a value of 0 when the channel
 // should no longer be receiving data to match with.
 // To fix this we could either keep the channels open witch is bad practice, or close the channels as we have done
