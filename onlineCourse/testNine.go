@@ -101,4 +101,9 @@ func main() {
 	wgt5.Wait()
 	fmt.Println(atomic.LoadInt64(&counterT95))
 
+
+	fmt.Println("Test 9.6")
+	fmt.Println(runtime.GOOS)
+	fmt.Println(runtime.GOARCH)
+	fmt.Println()
 }
