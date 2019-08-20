@@ -2,7 +2,7 @@
 Making a new type and converting
 */
 
-package main
+package _2___Fundamentals
 
 import "fmt"
 

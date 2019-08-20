@@ -2,7 +2,7 @@
 The tests can be found at https://docs.google.com/document/d/1ckYpi6hcRkaBUEk975f54oGsHYHu7GhzOk7-nOrkNxo/edit#
 */
 
-package main
+package _1___Var__types_and_values
 
 import "fmt"
 
