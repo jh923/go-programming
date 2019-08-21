@@ -13,7 +13,13 @@ func TestPower(t *testing.T) {
 }
 
 func ExamplePower()	{
-	fmt.Println(power(1,2))
+	fmt.Println(power(3,3))
 	// Output:
-	// 1
+	// 27
+}
+
+func BenchmarkPower(b *testing.B)	{
+	for i := 0; i < b.N; i++	{
+		power(3,3)
+	}
 }
