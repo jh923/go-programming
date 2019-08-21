@@ -1,4 +1,4 @@
-~ Reminder
+# Reminder
 ```
 When checking if a file is wirrten well use the following tools
 also sue go fmt to format code
@@ -10,6 +10,7 @@ and golint to lint the code
 BenchmarkFunc(b *testing.B)
 ExampleFUnc()
 TestFunc(t *testing.T)
+```
 
 # Commands
 ```
