@@ -1,4 +1,4 @@
-package _3___Control_flow
+package main
 
 import "fmt"
 

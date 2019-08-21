@@ -1,4 +1,4 @@
-package _7___Pointers
+package main
 
 import (
 	"fmt"

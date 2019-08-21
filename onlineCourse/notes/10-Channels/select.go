@@ -1,4 +1,4 @@
-package _0___Channels
+package main
 
 import "fmt"
 
