@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>value {{.}}</li>
+    <!-- Pass the data followed by a | and the function(s) you wish to apply with a | between each function-->
+    <li>Square root then ceil {{. | Sqrt | Ceil}}</li>
+</ul>
+</body>
+</html>

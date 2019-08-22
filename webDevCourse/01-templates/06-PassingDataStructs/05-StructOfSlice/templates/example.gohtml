@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    {{range .Trainers}}
+        <li>{{.Name}}'s favourite pokemon{{.MainPokemon}}</li>
+    {{end}}
+</ul>
+<ul>
+    {{range .Duelists}}
+        <li>{{.Name}}'s ace monster is the {{.AceMonster}}</li>
+    {{end}}
+</ul>
+</body>
+</html>

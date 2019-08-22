@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>My favourite monster cares are: </h1>
+<ul>
+    <!-- This range clause goes though the list printing out the current value -->
+    {{range .}}
+    <li>{{.}}</li>
+    {{end}}
+
+    <!--  could assign variables such as %indexm %element to have the list ordered
+            by calling them using {$index}} and {$element})-->
+</ul>
+</body>
+</html>
