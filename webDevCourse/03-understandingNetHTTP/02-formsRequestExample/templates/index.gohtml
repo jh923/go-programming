@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<!-- This code will only appear when we pass a value -->
+
+{{if .}}
+<main>
+    <p><strong>list of names</strong></p>
+    {{range $key, $value := .}}
+        <p><strong>{{$key}}</strong></p>
+    <ul>
+        {{range $value}}
+            <li><em>{{.}}</em></li>
+        {{end}}
+    </ul>
+    {{end}}
+</main>
+{{end}}
+
+<!-- This form will always appear -->
+<!--  From based upon code from https://www.w3schools.com/html/tryit.asp?filename=tryhtml_form_submit -->
+<form action="/"  name="var_name" id="CSS_or_JS_target_name" method="post">
+    First name:<br>
+    <input type="text" name="firstname" value="">
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

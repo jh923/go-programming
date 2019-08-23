@@ -78,7 +78,7 @@ func mux(conn net.Conn, ln string)	{
 }
 
 func index(conn net.Conn)	{
-	// It is best practice to sue a template.gohtml but this code is for example only
+	// It is best practice to sue a index.gohtml but this code is for example only
 	body := `
 	<!DOCTYPE html>
 	<html lang="en">
@@ -103,7 +103,7 @@ func index(conn net.Conn)	{
 }
 
 func about(conn net.Conn)	{
-	// It is best practice to sue a template.gohtml but this code is for example only
+	// It is best practice to sue a index.gohtml but this code is for example only
 	body := `
 	<!DOCTYPE html>
 	<html lang="en">
@@ -128,7 +128,7 @@ func about(conn net.Conn)	{
 }
 
 func content(conn net.Conn)	{
-	// It is best practice to sue a template.gohtml but this code is for example only
+	// It is best practice to sue a index.gohtml but this code is for example only
 	body := `
 	<!DOCTYPE html>
 	<html lang="en">
