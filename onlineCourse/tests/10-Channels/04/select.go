@@ -16,7 +16,6 @@ func main() {
 func gen(q chan<- int) <-chan int {
 	c := make(chan int)
 
-
 	go func() {
 		for i := 0; i < 100; i++ {
 			c <- i
@@ -27,7 +26,7 @@ func gen(q chan<- int) <-chan int {
 	return c
 }
 
-func receive(c, q <- chan int)	{
+func receive(c, q <-chan int) {
 	for {
 		select {
 		case v := <-c:

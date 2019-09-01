@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func main()	{
+func main() {
 	logf, err := os.Create("error_log.txt")
 	if err != nil {
 		fmt.Println(err)

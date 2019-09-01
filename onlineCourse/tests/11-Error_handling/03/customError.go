@@ -13,7 +13,7 @@ func (err customErr) Error() string {
 	return fmt.Sprintf("here is our error: %v", err.info)
 }
 
-func main()	{
+func main() {
 	error := customErr{
 		info: "Our custom error has occurred",
 	}
@@ -21,6 +21,6 @@ func main()	{
 	foo(error)
 }
 
-func foo(err error)	{
+func foo(err error) {
 	log.Println(err)
 }

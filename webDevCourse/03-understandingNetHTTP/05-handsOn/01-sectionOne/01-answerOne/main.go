@@ -5,19 +5,19 @@ import (
 	"net/http"
 )
 
-func index(res http.ResponseWriter, req *http.Request)	{
+func index(res http.ResponseWriter, req *http.Request) {
 	io.WriteString(res, "Welcome to the index page")
 }
 
-func dog(res http.ResponseWriter, req *http.Request)	{
+func dog(res http.ResponseWriter, req *http.Request) {
 	io.WriteString(res, "Welcome to the page about dogs")
 }
 
-func me(res http.ResponseWriter, req *http.Request)	{
+func me(res http.ResponseWriter, req *http.Request) {
 	io.WriteString(res, "Welcome Josh")
 }
 
-func main()	{
+func main() {
 	http.HandleFunc("/", index)
 	http.HandleFunc("/dog/", dog)
 	http.HandleFunc("/me/", me)

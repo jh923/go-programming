@@ -8,30 +8,30 @@ import (
 	"os"
 )
 
-func index(res http.ResponseWriter, req *http.Request)	{
+func index(res http.ResponseWriter, req *http.Request) {
 	io.WriteString(res, "Welcome to the index page")
 }
 
-func dog(res http.ResponseWriter, req *http.Request)	{
+func dog(res http.ResponseWriter, req *http.Request) {
 	io.WriteString(res, "Welcome to the page about dogs")
 }
 
-func me(res http.ResponseWriter, req *http.Request)	{
+func me(res http.ResponseWriter, req *http.Request) {
 	err := tpl.ExecuteTemplate(os.Stdout, "example.gohtml", "Josh")
-	if err != nil	{
+	if err != nil {
 		log.Fatal(err)
 	}
 }
 
-
 var tpl *template.Template
-func init()	{
+
+func init() {
 	tpl = template.Must(template.ParseGlob("templates/*.gohtml"))
 }
 
-func main()	{
+func main() {
 	err := tpl.ExecuteTemplate(os.Stdout, "example.gohtml", "Josh")
-	if err != nil	{
+	if err != nil {
 		log.Fatal(err)
 	}
 

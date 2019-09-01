@@ -8,7 +8,6 @@ import (
 	"strings"
 )
 
-
 // Initialises the server and then infinitely loops listening for quests to be handled
 // Putting each handler on a new go routine
 // Closes connection when program stops running
@@ -36,39 +35,40 @@ func handle(conn net.Conn) {
 }
 
 // Limits each go routine to one request and scan in data so the mutexer can decide how to handle the request
-func request(conn net.Conn)	{
+func request(conn net.Conn) {
 	i := 0
 	scanner := bufio.NewScanner(conn)
-	for scanner.Scan()	{
+	for scanner.Scan() {
 		ln := scanner.Text()
 		fmt.Println(ln)
-		if i == 0	{
+		if i == 0 {
 			mux(conn, ln)
 		}
-		if ln == ""	{
+		if ln == "" {
 			// Headers are done
 			break
 		}
-		i++	//Request served
+		i++ //Request served
 	}
 }
+
 // Split the request string into two parts, request type and uri. So it can decide which function to call
 // and prints out the top of a standard HTTP request
-func mux(conn net.Conn, ln string)	{
+func mux(conn net.Conn, ln string) {
 	// Request line
-	m := strings.Fields(ln)[0]	// Method of connection i.e GET
-	u := strings.Fields(ln)[1]	// uri
+	m := strings.Fields(ln)[0] // Method of connection i.e GET
+	u := strings.Fields(ln)[1] // uri
 
 	// Standard http request response
 	fmt.Println("***METHOD", m)
 	fmt.Println("***URI", u)
 
 	//Decided on what action to take
-	if m == "GET" && u == "/"	{
+	if m == "GET" && u == "/" {
 		index(conn)
-	} else if m == "GET" && u == "/about"	{
+	} else if m == "GET" && u == "/about" {
 		about(conn)
-	} else if m == "GET" && u == "/content"	{
+	} else if m == "GET" && u == "/content" {
 		content(conn)
 	} else if m == "GET" {
 		// If the user tries to get any page the doesn't exist
@@ -77,7 +77,7 @@ func mux(conn net.Conn, ln string)	{
 
 }
 
-func index(conn net.Conn)	{
+func index(conn net.Conn) {
 	// It is best practice to sue a index.gohtml but this code is for example only
 	body := `
 	<!DOCTYPE html>
@@ -102,7 +102,7 @@ func index(conn net.Conn)	{
 	fmt.Fprint(conn, body)
 }
 
-func about(conn net.Conn)	{
+func about(conn net.Conn) {
 	// It is best practice to sue a index.gohtml but this code is for example only
 	body := `
 	<!DOCTYPE html>
@@ -127,7 +127,7 @@ func about(conn net.Conn)	{
 	fmt.Fprint(conn, body)
 }
 
-func content(conn net.Conn)	{
+func content(conn net.Conn) {
 	// It is best practice to sue a index.gohtml but this code is for example only
 	body := `
 	<!DOCTYPE html>
@@ -151,7 +151,7 @@ func content(conn net.Conn)	{
 	fmt.Fprint(conn, body)
 }
 
-func notFound(conn net.Conn)	{
+func notFound(conn net.Conn) {
 	fmt.Fprint(conn, "HTTP/1.1 404 Page Not Found\r\n")
 	fmt.Fprint(conn, "r\n")
 }

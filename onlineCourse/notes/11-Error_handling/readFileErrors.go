@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func main()	{
+func main() {
 	//Open a file
 	f, err := os.Open("Evil plan to take over the world.txt")
 	if err != nil {

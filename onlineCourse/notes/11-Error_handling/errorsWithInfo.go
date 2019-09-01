@@ -5,7 +5,7 @@ import (
 	"log"
 )
 
-func main()	{
+func main() {
 	err := errors.New("big spooky new error")
 	log.Fatalln(err)
 
