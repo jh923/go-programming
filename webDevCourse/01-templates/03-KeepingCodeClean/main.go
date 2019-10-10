@@ -20,7 +20,7 @@ func main() {
 	// this parses all files with the gohrml extension in the dir.
 
 	// Create a file
-	nf, err := os.Create("index.html")
+	nf, err := os.Create("index.gohtml")
 	if err != nil {
 		log.Fatal("error creating file", err)
 	}
