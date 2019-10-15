@@ -1,0 +1,24 @@
+{{template "header"}}
+
+<form method="POST">
+    <label for="firstName">First Name</label>
+    <input type="text" id="firstName" name="first">
+    <br>
+    <label for="lastName">Last Name</label>
+    <input type="text" id="lastName" name="last">
+    <br>
+    <label for="sub">Hobby</label>
+    <input type="text" id="hobbyName" name="hobby">
+    <br>
+    <input type="submit">
+</form>
+
+<br>
+
+
+<p>
+    {{.FirstName}} {{.LastName}}'s hobby is {{.Hobby}}
+</p>
+
+
+{{template "footer"}}
